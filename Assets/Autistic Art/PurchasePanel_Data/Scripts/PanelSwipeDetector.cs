@@ -1,6 +1,6 @@
 using System;
 using DG.Tweening;
-using Firebase.Analytics;
+//using Firebase.Analytics;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
@@ -12,7 +12,7 @@ public class PanelSwipeDetector : MonoBehaviour
     int curr = 0;
     //public AudioClip[] clips;
     //public string[] animName,idleAnim;
-    public InAppCalling_CB inApp;
+    //public InAppCalling_CB inApp;
     public GameObject ParentalControllPanel;
 
     public RectTransform canvas;
@@ -37,7 +37,7 @@ public class PanelSwipeDetector : MonoBehaviour
     }
     public void soundbtn()
     {
-        SoundManager.instance.PlayEffect_Instance(4);
+        SoundHandler.instance.PlayClick();
     }
     private void Start()
     {
@@ -82,7 +82,7 @@ public class PanelSwipeDetector : MonoBehaviour
     {
         
         DOTween.KillAll(false);
-        SoundManager.instance.PlayEffect_Instance(4);
+        SoundHandler.instance.PlayClick();
 
         if (PlayerPrefs.GetInt("CameFromSplash") == 0)
         {
@@ -101,7 +101,7 @@ public class PanelSwipeDetector : MonoBehaviour
     {
         if (PlayerPrefs.GetInt("ShowParentalPanel") == 0)
         {
-            inApp.BuyInApp();
+            //inApp.BuyInApp();
         }
         else
         {
@@ -120,8 +120,5 @@ public class PanelSwipeDetector : MonoBehaviour
     {
         Application.OpenURL("https://muhammadubaidprivacy.blogspot.com/2025/06/privacy-policy.html");
     }
-    public void OnSound()
-    {
-        SoundManager.instance.PlayEffect_Instance(7);
-    }
+    
 }

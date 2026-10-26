@@ -165,7 +165,7 @@ public class SetFruits : MonoBehaviour
             // Assign the sprite to the fruit
             fruit.GetComponent<Image>().sprite = selectedSprite;
             fruit.name = $"Fruit_{i + 1}"; // Name each fruit uniquely
-            fruit.GetComponent<DragDropUbaid>().Shadow = Shadows[i];
+            fruit.GetComponent<DragDropObaid>().Shadow = Shadows[i];
             fruit.GetComponent<SetNewPos>().posObj = Shadows[i];
             Shadows[i].GetComponent<Image>().sprite = selectedSprite;
             Shadows[i].SetActive(true); 
@@ -184,7 +184,7 @@ public class SetFruits : MonoBehaviour
              SoundManager.instance.PlayEffect_Instance(8);
             AllFruit[i].GetComponent<Image>().enabled = true;
             AllFruit[i].GetComponent<DOTweenAnimation>().DOPlay();
-            AllFruit[i].GetComponent<DragDropUbaid>().enabled = true;
+            AllFruit[i].GetComponent<DragDropObaid>().enabled = true;
             AllFruit[i].GetComponent<BackObject>().enabled = true;
             
             yield return new WaitForSeconds(delay);

@@ -13,15 +13,6 @@
             { "tileID": 2, "ItemID": "3" },
             { "tileID": 3, "ItemID": "5" }
           ]
-        },
-        {
-          "positionIndex": 1,
-          "isFront": false,
-          "items": [
-            { "tileID": 1, "ItemID": "" },
-            { "tileID": 2, "ItemID": "" },
-            { "tileID": 3, "ItemID": "" }
-          ]
         }
       ],
       "blockPosition": 0,
@@ -42,7 +33,7 @@
         }
       ],
       "blockPosition": 0,
-      "sortingIndex": 100
+      "sortingIndex": 101
     },
     {
       "xAxis": 1.63,
@@ -59,7 +50,7 @@
         }
       ],
       "blockPosition": 0,
-      "sortingIndex": 100
+      "sortingIndex": 102
     },
     {
       "xAxis": -1.52,
@@ -73,19 +64,10 @@
             { "tileID": 2, "ItemID": "6" },
             { "tileID": 3, "ItemID": "6" }
           ]
-        },
-        {
-          "positionIndex": 1,
-          "isFront": false,
-          "items": [
-            { "tileID": 1, "ItemID": "" },
-            { "tileID": 2, "ItemID": "" },
-            { "tileID": 3, "ItemID": "" }
-          ]
         }
       ],
       "blockPosition": 0,
-      "sortingIndex": 95
+      "sortingIndex": 91
     },
     {
       "xAxis": 0.055,
@@ -102,7 +84,7 @@
         }
       ],
       "blockPosition": 0,
-      "sortingIndex": 95
+      "sortingIndex": 92
     },
     {
       "xAxis": 1.63,
@@ -119,7 +101,7 @@
         }
       ],
       "blockPosition": 0,
-      "sortingIndex": 95
+      "sortingIndex": 93
     },
     {
       "xAxis": -1.52,
@@ -132,15 +114,6 @@
             { "tileID": 1, "ItemID": "18" },
             { "tileID": 2, "ItemID": "34" },
             { "tileID": 3, "ItemID": "18" }
-          ]
-        },
-        {
-          "positionIndex": 1,
-          "isFront": false,
-          "items": [
-            { "tileID": 1, "ItemID": "" },
-            { "tileID": 2, "ItemID": "" },
-            { "tileID": 3, "ItemID": "" }
           ]
         }
       ],
@@ -162,7 +135,7 @@
         }
       ],
       "blockPosition": 0,
-      "sortingIndex": 90
+      "sortingIndex": 91
     },
     {
       "xAxis": 1.63,
@@ -179,7 +152,7 @@
         }
       ],
       "blockPosition": 0,
-      "sortingIndex": 90
+      "sortingIndex": 92
     }
   ]
 }

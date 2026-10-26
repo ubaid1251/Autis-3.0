@@ -12,9 +12,13 @@ public class ForAnimState : MonoBehaviour
         {
             SetFruits.ins.EndCall();
         }
-        else if (SceneManager.GetActiveScene().name == "AnimalSounds"|| SceneManager.GetActiveScene().name == "FruitSounds" || SceneManager.GetActiveScene().name == "VegetablesSounds" || SceneManager.GetActiveScene().name == "BodyPartsSounds")
+        else if (SceneManager.GetActiveScene().name == "FruitSounds" || SceneManager.GetActiveScene().name == "VegetablesSounds" || SceneManager.GetActiveScene().name == "BodyPartsSounds")
         {
             FindObject.ins.ForBallon();
+        }
+        else if (SceneManager.GetActiveScene().name == "AnimalSounds")
+        {
+            FindAnimals.ins.ForBallon();
         }
         else if (SceneManager.GetActiveScene().name == "ShapeSounds")
         {

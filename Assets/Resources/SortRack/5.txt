@@ -41,8 +41,8 @@
       "sortingIndex":80
     },
     {
-      "xAxis": 0.05,
-      "yAxis": -0.05,
+      "xAxis": 0.033,
+      "yAxis": -0.033,
       "tilesData":[{"positionIndex":0,"isFront":true,"items":[{"tileID":1,"ItemID":"13"},{"tileID":2,"ItemID":"14"},{"tileID":3,"ItemID":"13"}]}],
       "sortingIndex":80
     },

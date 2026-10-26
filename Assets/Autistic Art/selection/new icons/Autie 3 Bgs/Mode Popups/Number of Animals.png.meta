@@ -1,0 +1,559 @@
+fileFormatVersion: 2
+guid: 226bfa7908f3504438c7ecda5b54a2ec
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1344602767030445365
+    second: Number of Animals Logo_0
+  - first:
+      213: -8482596836731363019
+    second: Number of Animals Logo_1
+  - first:
+      213: 1802502186167065599
+    second: Number of Animals Logo_2
+  - first:
+      213: 3901694168852817136
+    second: Number of Animals Logo_3
+  - first:
+      213: 1214331566991839004
+    second: Number of Animals Logo_4
+  - first:
+      213: -9124706152336649921
+    second: Number of Animals Logo_5
+  - first:
+      213: -6065813658619629800
+    second: Number of Animals Logo_6
+  - first:
+      213: 2508001201281852696
+    second: Number of Animals Logo_7
+  - first:
+      213: -8471296183000426355
+    second: Number of Animals Logo_8
+  - first:
+      213: -5381308923639772913
+    second: Number of Animals Logo_9
+  - first:
+      213: 7114992712840910967
+    second: Number of Animals Logo_10
+  - first:
+      213: -1907288477443483322
+    second: Number of Animals Logo_11
+  - first:
+      213: -2080771281339146402
+    second: Number of Animals Logo_12
+  - first:
+      213: -2681493014313657216
+    second: Number of Animals Logo_13
+  - first:
+      213: -6813287363627101035
+    second: Number of Animals Logo_14
+  - first:
+      213: -1542774722752964448
+    second: Number of Animals Logo_15
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Number of Animals Logo_0
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 97
+        width: 874
+        height: 484
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5356bd4b71df8a210800000000000000
+      internalID: 1344602767030445365
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Number of Animals Logo_1
+      rect:
+        serializedVersion: 2
+        x: 869
+        y: 578
+        width: 17
+        height: 14
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 53166c5ae13c74a80800000000000000
+      internalID: -8482596836731363019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Number of Animals Logo_2
+      rect:
+        serializedVersion: 2
+        x: 1066
+        y: 95
+        width: 1077
+        height: 527
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ffb5a513036c30910800000000000000
+      internalID: 1802502186167065599
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Number of Animals Logo_3
+      rect:
+        serializedVersion: 2
+        x: 2059
+        y: 529
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0f46facac2a952630800000000000000
+      internalID: 3901694168852817136
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Number of Animals Logo_4
+      rect:
+        serializedVersion: 2
+        x: 2065
+        y: 529
+        width: 8
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c1f871a502c2ad010800000000000000
+      internalID: 1214331566991839004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Number of Animals Logo_5
+      rect:
+        serializedVersion: 2
+        x: 927
+        y: 240
+        width: 271
+        height: 202
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f31172669188e5180800000000000000
+      internalID: -9124706152336649921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Number of Animals Logo_6
+      rect:
+        serializedVersion: 2
+        x: 1906
+        y: 260
+        width: 10
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 81fa3449d96e1dba0800000000000000
+      internalID: -6065813658619629800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Number of Animals Logo_7
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 208
+        width: 11
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 81568aafdc53ec220800000000000000
+      internalID: 2508001201281852696
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Number of Animals Logo_8
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 182
+        width: 7
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d8813212109ef6a80800000000000000
+      internalID: -8471296183000426355
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Number of Animals Logo_9
+      rect:
+        serializedVersion: 2
+        x: 905
+        y: 97
+        width: 96
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f09cfcb9b00c155b0800000000000000
+      internalID: -5381308923639772913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Number of Animals Logo_10
+      rect:
+        serializedVersion: 2
+        x: 1424
+        y: 184
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 778106cec288db260800000000000000
+      internalID: 7114992712840910967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Number of Animals Logo_11
+      rect:
+        serializedVersion: 2
+        x: 1518
+        y: 166
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 64919c92c33f785e0800000000000000
+      internalID: -1907288477443483322
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Number of Animals Logo_12
+      rect:
+        serializedVersion: 2
+        x: 1526
+        y: 167
+        width: 10
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e5f12f44b8d9f13e0800000000000000
+      internalID: -2080771281339146402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Number of Animals Logo_13
+      rect:
+        serializedVersion: 2
+        x: 879
+        y: 112
+        width: 25
+        height: 33
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 08c94268f4c69cad0800000000000000
+      internalID: -2681493014313657216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Number of Animals Logo_14
+      rect:
+        serializedVersion: 2
+        x: 963
+        y: 126
+        width: 15
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 594595abd375271a0800000000000000
+      internalID: -6813287363627101035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Number of Animals Logo_15
+      rect:
+        serializedVersion: 2
+        x: 1231
+        y: 122
+        width: 17
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0a89bd94096f69ae0800000000000000
+      internalID: -1542774722752964448
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Number of Animals Logo_0: 1344602767030445365
+      Number of Animals Logo_1: -8482596836731363019
+      Number of Animals Logo_10: 7114992712840910967
+      Number of Animals Logo_11: -1907288477443483322
+      Number of Animals Logo_12: -2080771281339146402
+      Number of Animals Logo_13: -2681493014313657216
+      Number of Animals Logo_14: -6813287363627101035
+      Number of Animals Logo_15: -1542774722752964448
+      Number of Animals Logo_2: 1802502186167065599
+      Number of Animals Logo_3: 3901694168852817136
+      Number of Animals Logo_4: 1214331566991839004
+      Number of Animals Logo_5: -9124706152336649921
+      Number of Animals Logo_6: -6065813658619629800
+      Number of Animals Logo_7: 2508001201281852696
+      Number of Animals Logo_8: -8471296183000426355
+      Number of Animals Logo_9: -5381308923639772913
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

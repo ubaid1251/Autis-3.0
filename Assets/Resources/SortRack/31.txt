@@ -97,7 +97,7 @@
           "positionIndex": 1,
           "isFront": false,
           "items": [
-            { "tileID": 1, "ItemID": "17" },
+            { "tileID": 1, "ItemID": "34" },
             { "tileID": 2, "ItemID": "" },
             { "tileID": 3, "ItemID": "" }
           ]
@@ -340,7 +340,7 @@
           "items": [
             { "tileID": 1, "ItemID": "" },
             { "tileID": 2, "ItemID": "" },
-            { "tileID": 3, "ItemID": "17" }
+            { "tileID": 3, "ItemID": "34" }
           ]
         }
       ],
@@ -367,7 +367,7 @@
           "items": [
             { "tileID": 1, "ItemID": "" },
             { "tileID": 2, "ItemID": "" },
-            { "tileID": 3, "ItemID": "17" }
+            { "tileID": 3, "ItemID": "34" }
           ]
         }
       ],

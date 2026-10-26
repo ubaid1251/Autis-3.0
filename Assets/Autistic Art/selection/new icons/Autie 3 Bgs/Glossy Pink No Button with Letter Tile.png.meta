@@ -1,0 +1,481 @@
+fileFormatVersion: 2
+guid: ccf26153a7d71784981cb0ee19c1eee0
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -905583573028304887
+    second: Glossy Pink No Button with Letter Tile_0
+  - first:
+      213: 1981532018367113866
+    second: Glossy Pink No Button with Letter Tile_1
+  - first:
+      213: 1772235165235505706
+    second: Glossy Pink No Button with Letter Tile_2
+  - first:
+      213: -4331821138710637851
+    second: Glossy Pink No Button with Letter Tile_3
+  - first:
+      213: -6478237752667410459
+    second: Glossy Pink No Button with Letter Tile_4
+  - first:
+      213: 2882276370089419544
+    second: Glossy Pink No Button with Letter Tile_5
+  - first:
+      213: 6292677081173593197
+    second: Glossy Pink No Button with Letter Tile_6
+  - first:
+      213: -8408734485266114868
+    second: Glossy Pink No Button with Letter Tile_7
+  - first:
+      213: -5752924536734392832
+    second: Glossy Pink No Button with Letter Tile_8
+  - first:
+      213: -1244549907009999296
+    second: Glossy Pink No Button with Letter Tile_9
+  - first:
+      213: 4773186592637086949
+    second: Glossy Pink No Button with Letter Tile_10
+  - first:
+      213: 4788221046784462571
+    second: Glossy Pink No Button with Letter Tile_11
+  - first:
+      213: -2018463208139651648
+    second: Glossy Pink No Button with Letter Tile_12
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: iOS
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Glossy Pink No Button with Letter Tile_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 23
+        width: 1441
+        height: 1000
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 908083fc988be63f0800000000000000
+      internalID: -905583573028304887
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Glossy Pink No Button with Letter Tile_1
+      rect:
+        serializedVersion: 2
+        x: 1084
+        y: 983
+        width: 14
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a8aa5d14fd0df7b10800000000000000
+      internalID: 1981532018367113866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Glossy Pink No Button with Letter Tile_2
+      rect:
+        serializedVersion: 2
+        x: 1095
+        y: 992
+        width: 26
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a2a615a3e7e389810800000000000000
+      internalID: 1772235165235505706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Glossy Pink No Button with Letter Tile_3
+      rect:
+        serializedVersion: 2
+        x: 1257
+        y: 985
+        width: 14
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5e2df9410a742e3c0800000000000000
+      internalID: -4331821138710637851
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Glossy Pink No Button with Letter Tile_4
+      rect:
+        serializedVersion: 2
+        x: 1281
+        y: 973
+        width: 14
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5efebbd461da816a0800000000000000
+      internalID: -6478237752667410459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Glossy Pink No Button with Letter Tile_5
+      rect:
+        serializedVersion: 2
+        x: 1327
+        y: 928
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 813aeaf6617eff720800000000000000
+      internalID: 2882276370089419544
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Glossy Pink No Button with Letter Tile_6
+      rect:
+        serializedVersion: 2
+        x: 1338
+        y: 893
+        width: 24
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d6c089d1774145750800000000000000
+      internalID: 6292677081173593197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Glossy Pink No Button with Letter Tile_7
+      rect:
+        serializedVersion: 2
+        x: 1384
+        y: 879
+        width: 13
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cc6d22b798c2e4b80800000000000000
+      internalID: -8408734485266114868
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Glossy Pink No Button with Letter Tile_8
+      rect:
+        serializedVersion: 2
+        x: 1352
+        y: 823
+        width: 77
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 00e51583d918920b0800000000000000
+      internalID: -5752924536734392832
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Glossy Pink No Button with Letter Tile_9
+      rect:
+        serializedVersion: 2
+        x: 1398
+        y: 389
+        width: 9
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 04e6c6714787abee0800000000000000
+      internalID: -1244549907009999296
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Glossy Pink No Button with Letter Tile_10
+      rect:
+        serializedVersion: 2
+        x: 1371
+        y: 177
+        width: 23
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5ec6ac4aae3cd3240800000000000000
+      internalID: 4773186592637086949
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Glossy Pink No Button with Letter Tile_11
+      rect:
+        serializedVersion: 2
+        x: 1384
+        y: 213
+        width: 23
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bee03a74cad237240800000000000000
+      internalID: 4788221046784462571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Glossy Pink No Button with Letter Tile_12
+      rect:
+        serializedVersion: 2
+        x: 1344
+        y: 132
+        width: 33
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0c504ae086afcf3e0800000000000000
+      internalID: -2018463208139651648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Glossy Pink No Button with Letter Tile_0: -905583573028304887
+      Glossy Pink No Button with Letter Tile_1: 1981532018367113866
+      Glossy Pink No Button with Letter Tile_10: 4773186592637086949
+      Glossy Pink No Button with Letter Tile_11: 4788221046784462571
+      Glossy Pink No Button with Letter Tile_12: -2018463208139651648
+      Glossy Pink No Button with Letter Tile_2: 1772235165235505706
+      Glossy Pink No Button with Letter Tile_3: -4331821138710637851
+      Glossy Pink No Button with Letter Tile_4: -6478237752667410459
+      Glossy Pink No Button with Letter Tile_5: 2882276370089419544
+      Glossy Pink No Button with Letter Tile_6: 6292677081173593197
+      Glossy Pink No Button with Letter Tile_7: -8408734485266114868
+      Glossy Pink No Button with Letter Tile_8: -5752924536734392832
+      Glossy Pink No Button with Letter Tile_9: -1244549907009999296
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

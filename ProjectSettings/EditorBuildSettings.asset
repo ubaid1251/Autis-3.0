@@ -59,5 +59,11 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/PopIt.unity
     guid: b95c08d436166264ab8349624b8f6464
+  - enabled: 1
+    path: Assets/Scenes/GoodSort.unity
+    guid: 1d032e8e9d56a0c4e85394242099a9fe
+  - enabled: 1
+    path: Assets/Scenes/FlashCards.unity
+    guid: ee8e4a12c2f65a8409f5d0e144c9ce69
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0

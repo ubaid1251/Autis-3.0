@@ -79,7 +79,7 @@
           "isFront": true,
           "items": [
             { "tileID": 1, "ItemID": "15" },
-            { "tileID": 2, "ItemID": "11" },
+            { "tileID": 2, "ItemID": "34" },
             { "tileID": 3, "ItemID": "" }
           ]
         },
@@ -207,9 +207,9 @@
           "positionIndex": 0,
           "isFront": true,
           "items": [
-            { "tileID": 1, "ItemID": "11" },
+            { "tileID": 1, "ItemID": "34" },
             { "tileID": 2, "ItemID": "21" },
-            { "tileID": 3, "ItemID": "11" }
+            { "tileID": 3, "ItemID": "34" }
           ]
         },
         {
