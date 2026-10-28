@@ -8,7 +8,6 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using static DanielLochner.Assets.SimpleScrollSnap.SimpleScrollSnap;
-
 namespace DanielLochner.Assets.SimpleScrollSnap
 {
     [CustomEditor(typeof(SimpleScrollSnap))]
@@ -18,8 +17,9 @@ namespace DanielLochner.Assets.SimpleScrollSnap
         private int selectedProperty;
         private float selectedMinValue, selectedMaxValue, selectedMinDisplacement, selectedMaxDisplacement;
         private bool showTransitionEffects = true, showMovement = true, showMargin = true, showNavigation = true, showSelection = true, showEvents = true, showDisplacement, showValue;
-        private SerializedProperty movementType, movementAxis, automaticallyLayout, sizeControl, size, automaticLayoutSpacing, leftMargin, rightMargin, topMargin, bottomMargin, infinitelyScroll, infiniteScrollingEndSpacing, startingPanel, swipeGestures, minimumSwipeSpeed, previousButton, nextButton, pagination, toggleNavigation, snapTarget, snappingSpeed, useUnscaledTime, useOcclusionCulling, thresholdSnappingSpeed, hardSnap, onPanelSelecting, onPanelSelected, onPanelChanging, onPanelChanged;
+        private SerializedProperty movementType, movementAxis, automaticallyLayout, sizeControl, size, automaticLayoutSpacing, leftMargin, rightMargin, topMargin, bottomMargin, infinitelyScroll, infiniteScrollingEndSpacing, startingPanel, swipeGestures, minimumSwipeSpeed, previousButton, nextButton, pagination, toggleNavigation, snapTarget, snappingSpeed, useUnscaledTime, useOcclusionCulling, thresholdSnappingSpeed, hardSnap, onPanelSelecting, onPanelSelected, onPanelChanging, onPanelChanged, audioClip;
         private SimpleScrollSnap simpleScrollSnap;
+        private SerializedProperty MainSelectionRef;
         private AnimationCurve selectedFunction = AnimationCurve.Constant(0, 1, 1);
         #endregion
 
@@ -29,6 +29,8 @@ namespace DanielLochner.Assets.SimpleScrollSnap
             simpleScrollSnap = target as SimpleScrollSnap;
 
             // Serialized Properties
+            audioClip = serializedObject.FindProperty("audioClip");
+            MainSelectionRef = serializedObject.FindProperty("MainSelectionRef");
             movementType = serializedObject.FindProperty("movementType");
             movementAxis = serializedObject.FindProperty("movementAxis");
             automaticallyLayout = serializedObject.FindProperty("automaticallyLayout");
@@ -102,6 +104,8 @@ namespace DanielLochner.Assets.SimpleScrollSnap
         private void MovementType()
         {
             EditorGUILayout.PropertyField(movementType, new GUIContent("Movement Type", "Determines how users will be able to move between panels within the ScrollRect."));
+            EditorGUILayout.PropertyField(MainSelectionRef, new GUIContent("Main Selection Ref", ""));
+            EditorGUILayout.PropertyField(audioClip, new GUIContent("rewind Clip", ""));
             if (simpleScrollSnap.movementType == SimpleScrollSnap.MovementType.Fixed)
             {
                 EditorGUI.indentLevel++;
@@ -161,6 +165,8 @@ namespace DanielLochner.Assets.SimpleScrollSnap
         }
         private void StartingPanel()
         {
+            //startingPanel. = GameManager.Instance.StartingIndex;
+            startingPanel.intValue = 0;
             EditorGUILayout.IntSlider(startingPanel, 0, simpleScrollSnap.NumberOfPanels - 1, new GUIContent("Starting Panel", "The number of the panel that will be displayed first, based on a 0-indexed array."));
         }
 

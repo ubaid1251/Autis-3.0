@@ -18,6 +18,7 @@ namespace DanielLochner.Assets.SimpleScrollSnap
     {
         #region Fields
         public MovementType movementType = MovementType.Fixed;
+        public SimpleScrollSnap MainSelectionRef;
         public MovementAxis movementAxis = MovementAxis.Horizontal;
         public bool automaticallyLayout = true;
         public SizeControl sizeControl = SizeControl.Fit;
@@ -51,6 +52,8 @@ namespace DanielLochner.Assets.SimpleScrollSnap
         private ScrollRect scrollRect;
         private Vector2 previousContentAnchoredPosition, velocity;
         private Dictionary<int, Graphic[]> panelGraphics = new Dictionary<int, Graphic[]>();
+        private GameObject[] SelectionAnimateObjs;
+        //private SelectionAnimation[] SelectionAnimationComp;
         #endregion
 
         #region Properties
@@ -64,6 +67,7 @@ namespace DanielLochner.Assets.SimpleScrollSnap
         }
 
         public int CurrentPanel { get; set; }
+
         public int TargetPanel { get; set; }
         public int NearestPanel { get; set; }
 
@@ -71,7 +75,9 @@ namespace DanielLochner.Assets.SimpleScrollSnap
         { get; set; }
         public GameObject[] Panels { get; set; }
         public Toggle[] Toggles { get; set; }
-
+        private new AudioSource audio;
+        //private bool playAudio= false;
+        public AudioClip audioClip;
         public int NumberOfPanels
         {
             get { return Content.childCount; }
@@ -112,13 +118,23 @@ namespace DanielLochner.Assets.SimpleScrollSnap
         #region Methods
         private void Awake()
         {
+
+           
+            startingPanel = PlayerPrefs.GetInt("SelectedMode");
             Initialize();
         }
+        
         private void Start()
         {
             if (Validate())
             {
                 Setup();
+                //if (MainSelectionRef != null)
+                //{
+                //    SelectionAnimationComp = new SelectionAnimation[Panels.Length];
+                //    SelectionAnimationComp = this.GetComponentsInChildren<SelectionAnimation>();
+                //}
+                audio = Camera.main.GetComponent<AudioSource>();
             }
             else
             {
@@ -133,16 +149,22 @@ namespace DanielLochner.Assets.SimpleScrollSnap
             OnSelectingAndSnapping();
             OnInfiniteScrolling();
             OnTransitionEffects();
-            OnSwipeGestures();
+            //   OnSwipeGestures();
+            //if (playAudio ) {
+            //    audio.clip = audioClip;
+            //    audio.Play();
+            //}
 
             DetermineVelocity();
+            if (pagination != null)
+                pagination.transform.localPosition = new Vector3(pagination.transform.localPosition.x, -10, pagination.transform.localPosition.z);
         }
-        #if UNITY_EDITOR
+#if UNITY_EDITOR
         private void OnValidate()
         {
             Initialize();
         }
-        #endif
+#endif
 
         public void OnPointerDown(PointerEventData eventData)
         {
@@ -157,6 +179,7 @@ namespace DanielLochner.Assets.SimpleScrollSnap
             if (hardSnap)
             {
                 scrollRect.inertia = true;
+                scrollRect.decelerationRate = 0.35f;
             }
 
             selected = false;
@@ -181,7 +204,6 @@ namespace DanielLochner.Assets.SimpleScrollSnap
             {
                 releaseDirection = scrollRect.velocity.y > 0 ? Direction.Up : Direction.Down;
             }
-
             releaseSpeed = scrollRect.velocity.magnitude;
         }
 
@@ -310,20 +332,37 @@ namespace DanielLochner.Assets.SimpleScrollSnap
             float yOffset = (movementAxis == MovementAxis.Vertical || movementType == MovementType.Free) ? Viewport.rect.height / 2f : 0f;
             Vector2 offset = new Vector2(xOffset, yOffset);
             previousContentAnchoredPosition = Content.anchoredPosition = -PanelsRT[startingPanel].anchoredPosition + offset;
+
             CurrentPanel = TargetPanel = NearestPanel = startingPanel;
 
             // Previous Button
             if (previousButton != null)
             {
                 previousButton.onClick.RemoveAllListeners();
-                previousButton.onClick.AddListener(GoToPreviousPanel);
+                //   previousButton.onClick.AddListener(GoToPreviousPanel);
+                previousButton.onClick.AddListener(() =>
+                {
+                    GoToPreviousPanel();
+                    //if (GetComponent<OnPanelChangedAmpEvents>() != null)
+                    //{
+                    //    GetComponent<OnPanelChangedAmpEvents>().OnPanelChangedEvent(TargetPanel);
+                    //}
+                });
             }
 
             // Next Button
             if (nextButton != null)
             {
                 nextButton.onClick.RemoveAllListeners();
-                nextButton.onClick.AddListener(GoToNextPanel);
+                //  nextButton.onClick.AddListener(GoToNextPanel);
+                nextButton.onClick.AddListener(() =>
+                {
+                    GoToNextPanel();
+                    //if (GetComponent<OnPanelChangedAmpEvents>() != null)
+                    //{
+                    //    GetComponent<OnPanelChangedAmpEvents>().OnPanelChangedEvent(TargetPanel);
+                    //}
+                });
             }
 
             // Pagination
@@ -335,7 +374,7 @@ namespace DanielLochner.Assets.SimpleScrollSnap
                     if (Toggles[i] != null)
                     {
                         Toggles[i].isOn = (i == startingPanel);
-                        Toggles[i].interactable = (i != TargetPanel);
+                        // Toggles[i].interactable = (i != TargetPanel);
                         int panelNum = i;
 
                         Toggles[i].onValueChanged.RemoveAllListeners();
@@ -344,8 +383,16 @@ namespace DanielLochner.Assets.SimpleScrollSnap
                             if (Toggles[panelNum].isOn && toggleNavigation)
                             {
                                 GoToPanel(panelNum);
+
+                                //if (MainSelectionRef != null)
+                                //    if(CurrentPanel!= TargetPanel)
+                                //    MainSelectionRef.GoToPanel(panelNum);
                             }
                         });
+
+
+
+
                     }
                 }
             }
@@ -485,13 +532,26 @@ namespace DanielLochner.Assets.SimpleScrollSnap
                 {
                     for (int i = 0; i < NumberOfPanels; i++)
                     {
-                        if (DisplacementFromCenter(i).x > Content.rect.width / 2f)
+                        if (DisplacementFromCenter(i).x - 100 > Content.rect.width / 2f)
                         {
+                            //Debug.Log("displace" +DisplacementFromCenter(i).x);
+                            //Debug.Log("content" + Content.rect.width / 2f);
                             PanelsRT[i].anchoredPosition -= new Vector2(contentLength, 0);
+                            //if (audio != null )
+                            //{
+                            //    audio.clip = audioClip;
+                            //    audio.Play();
+                            //}
                         }
                         else if (DisplacementFromCenter(i).x < Content.rect.width / -2f)
                         {
+                            // Debug.Log(DisplacementFromCenter(i).x);
                             PanelsRT[i].anchoredPosition += new Vector2(contentLength, 0);
+                            //if (audio != null)
+                            //{
+                            //    audio.clip = audioClip;
+                            //    audio.Play();
+                            //}
                         }
                     }
                 }
@@ -542,10 +602,16 @@ namespace DanielLochner.Assets.SimpleScrollSnap
                     switch (transitionEffect.Label)
                     {
                         case "localPosition.z":
-                            panel.transform.localPosition = new Vector3(panel.transform.localPosition.x, panel.transform.localPosition.y, transitionEffect.GetValue(displacement));
+                            //panel.transform.localPosition = new Vector3(panel.transform.localPosition.x, panel.transform.localPosition.y, transitionEffect.GetValue(displacement));
                             break;
                         case "localScale.x":
-                            panel.transform.localScale = new Vector2(transitionEffect.GetValue(displacement), panel.transform.localScale.y);
+                            //if (displacement >= 0 && displacement <= 5 && velocity.x >0) {
+                            //    audio.clip = audioClip;
+                            //    audio.Play();
+                            //}
+                            panel.transform.localPosition = new Vector3(panel.transform.localPosition.x, transitionEffect.GetValue(displacement), panel.transform.localPosition.z);
+                            // panel.transform.localScale = new Vector2(transitionEffect.GetValue(displacement), panel.transform.localScale.y);
+
                             break;
                         case "localScale.y":
                             panel.transform.localScale = new Vector2(panel.transform.localScale.x, transitionEffect.GetValue(displacement));
@@ -599,35 +665,90 @@ namespace DanielLochner.Assets.SimpleScrollSnap
                 scrollRect.horizontal = scrollRect.vertical = !dragging;
             }
         }
-
+        //public bool Isnext = false;
         public void GoToPanel(int panelNumber)
         {
-            TargetPanel = panelNumber;
-            selected = true;
-            onPanelSelected.Invoke();
-
-            if (pagination != null)
+            //print("snapped");
+            //if (MainSelectionRef.TargetPanel < panelNumber)
+            //{
+            //    Isnext = false;
+            //}
+            //else
+            //{
+            //    Isnext = true;
+            //}
+            if (MainSelectionRef != null)
             {
-                for (int i = 0; i < Toggles.Length; i++)
-                {
-                    if (Toggles[i] != null)
-                    {
-                        Toggles[i].isOn = (i == TargetPanel);
-                        Toggles[i].interactable = (i != TargetPanel);
-                    }
-                }
+                //if (TargetPanel != CurrentPanel)
+                //    SelectionAnimationComp[CurrentPanel].HideSelection();
+                MainSelectionRef.TargetPanel = panelNumber;
             }
 
+            TargetPanel = panelNumber;
+            selected = true;
             if (hardSnap)
             {
                 scrollRect.inertia = false;
             }
         }
+
+        public void GoToPanelMainRef()
+        {
+            //if (MainSelectionRef != null)
+            //    if (CurrentPanel != TargetPanel)
+            //    {
+            //        MainSelectionRef.GoToPanel(TargetPanel);
+            //    }
+        }
+        public void TriggerAnimateForSelection()
+        {
+            //if (TargetPanel != CurrentPanel)
+            //{
+
+            // SelectionAnimationComp[TargetPanel].AnimateSelection(TargetPanel);
+            // SelectionAnimationComp[CurrentPanel].HideSelection();
+
+            //}
+
+            //for (int index = 0; index < SelectionAnimationComp.Length; index++)
+            //{
+            //    SelectionAnimationComp[index].transform.parent.gameObject.SetActive(false);
+            //}
+
+            ////if (TargetPanel != CurrentPanel)
+            //{
+            //    if (TargetPanel < SelectionAnimationComp.Length)
+            //    {
+            //        SelectionAnimationComp[TargetPanel].transform.parent.gameObject.SetActive(true);
+            //    }
+            //}
+        }
+
+        //public void TriggerAnimateForSelectionNew()
+        //{
+        //    ChangeTexturesSlowly.Instance.selectionAnimations[CurrentPanel].HideSelection();
+        //    CurrentPanel = TargetPanel;
+        //    ChangeTexturesSlowly.Instance.selectionAnimations[TargetPanel].AnimateSelection();
+        //}
+
+        public void TriggerAnimateBeforeSelection()
+        {
+            //if (CurrentPanel < 1)
+            //{
+            //    SelectionAnimationComp[NumberOfPanels-1].HideSelection();
+            //}
+            //else
+            //{
+            //    SelectionAnimationComp[CurrentPanel-1].HideSelection();
+            //}
+        }
         public void GoToPreviousPanel()
         {
             NearestPanel = DetermineNearestPanel();
+            //print(NearestPanel);
             if (NearestPanel != 0)
             {
+
                 GoToPanel(NearestPanel - 1);
             }
             else
@@ -770,7 +891,8 @@ namespace DanielLochner.Assets.SimpleScrollSnap
         #endregion
 
         #region Inner Classes
-        [Serializable] public class TransitionEffect
+        [Serializable]
+        public class TransitionEffect
         {
             #region Fields
             [SerializeField] protected float minDisplacement, maxDisplacement, minValue, maxValue, defaultMinValue, defaultMaxValue, defaultMinDisplacement, defaultMaxDisplacement;
@@ -826,9 +948,9 @@ namespace DanielLochner.Assets.SimpleScrollSnap
                 this.function = function;
 
                 SetDefaultValues(minValue, maxValue, minDisplacement, maxDisplacement, function);
-                #if UNITY_EDITOR
+#if UNITY_EDITOR
                 UnityEditor.SceneManagement.EditorSceneManager.MarkSceneDirty(UnityEngine.SceneManagement.SceneManager.GetActiveScene());
-                #endif
+#endif
             }
 
             private void SetDefaultValues(float minValue, float maxValue, float minDisplacement, float maxDisplacement, AnimationCurve function)
@@ -839,7 +961,7 @@ namespace DanielLochner.Assets.SimpleScrollSnap
                 defaultMaxDisplacement = maxDisplacement;
                 defaultFunction = function;
             }
-            #if UNITY_EDITOR
+#if UNITY_EDITOR
             public void Init()
             {
                 GUILayout.BeginVertical("HelpBox");
@@ -893,7 +1015,7 @@ namespace DanielLochner.Assets.SimpleScrollSnap
                 }
                 GUILayout.EndVertical();
             }
-            #endif
+#endif
             public void Reset()
             {
                 minValue = defaultMinValue;

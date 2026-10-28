@@ -2,21 +2,26 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+using UnityEngine.SceneManagement;
 public class SoundHandle : MonoBehaviour
 {
     public AudioSource[] sfx;
     public AudioSource bgm;
     [HideInInspector]
     public AudioSource mySource;
-    public GameObject sfxOn,sfxOff, bgmOn,bgmOff,vibOn,VibOff;
-    public AudioClip selectCh,click,tap,camera;
+    public GameObject sfxOn, sfxOff, bgmOn, bgmOff, vibOn, VibOff, setng, setng2;
+    public AudioClip selectCh, click, tap, camera;
     public AudioSource paintS;
     public static SoundHandle instance;
     private void Awake()
     {
         mySource = GetComponent<AudioSource>();
         CheckSounds();
+        if (SceneManager.GetActiveScene().name == "TraceABCSelection")
+        {
+            CheckSounds2();
+        }
+
         instance = this;
     }
 
@@ -41,7 +46,7 @@ public class SoundHandle : MonoBehaviour
             paintS.Stop();
         }
     }
-    
+
     public void PlayClick()
     {
         if (PlayerPrefs.GetInt("sfx") == 0)
@@ -111,7 +116,7 @@ public class SoundHandle : MonoBehaviour
             }
             sfxOn.SetActive(true);
             sfxOff.SetActive(false);
-           
+
         }
         if (mySource.enabled)
             PlayClick();
@@ -123,7 +128,7 @@ public class SoundHandle : MonoBehaviour
         if (PlayerPrefs.GetInt("bgm") == 0)
         {
             PlayerPrefs.SetInt("bgm", 1);
-           bgm.enabled = false;
+            bgm.enabled = false;
 
             bgmOn.SetActive(false);
             bgmOff.SetActive(true);
@@ -134,6 +139,47 @@ public class SoundHandle : MonoBehaviour
             bgm.enabled = true;
             bgmOn.SetActive(true);
             bgmOff.SetActive(false);
+        }
+    }
+    public void toggleSFX2()
+    {
+        if (PlayerPrefs.GetInt("sfx") == 0)
+        {
+            PlayerPrefs.SetInt("sfx", 1);
+            for (int i = 0; i < sfx.Length; i++)
+            {
+                sfx[i].enabled = false;
+            }
+            //sfxOn.SetActive(false);
+            //sfxOff.SetActive(true);
+        }
+        else
+        {
+            PlayerPrefs.SetInt("sfx", 0);
+            for (int i = 0; i < sfx.Length; i++)
+            {
+                sfx[i].enabled = true;
+            }
+            //sfxOn.SetActive(true);
+            //sfxOff.SetActive(false);
+
+        }
+        if (mySource.enabled)
+            PlayClick();
+    }
+    public void toggleBGM2()
+    {
+        if (mySource.enabled)
+            PlayClick();
+        if (PlayerPrefs.GetInt("bgm") == 0)
+        {
+            PlayerPrefs.SetInt("bgm", 1);
+            bgm.enabled = false;
+        }
+        else
+        {
+            PlayerPrefs.SetInt("bgm", 0);
+            bgm.enabled = true;
         }
     }
     public void toggleVibr()
@@ -155,5 +201,23 @@ public class SoundHandle : MonoBehaviour
             vibOn.SetActive(true);
             VibOff.SetActive(false);
         }
+    }
+
+    public void OnnOffSounds()
+    {
+        toggleBGM2();
+        toggleSFX2();
+    }
+    public void CheckSounds2()
+    {
+        if (PlayerPrefs.GetInt("sfx") == 1 && sfx.Length > 0)
+        {
+            if (sfxOn && sfxOff)
+            {
+                setng.SetActive(false);
+                setng2.SetActive(true);
+            }
+        }
+
     }
 }
