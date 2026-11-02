@@ -185,7 +185,7 @@ public class SetFruits : MonoBehaviour
             AllFruit[i].GetComponent<Image>().enabled = true;
             AllFruit[i].GetComponent<DOTweenAnimation>().DOPlay();
             AllFruit[i].GetComponent<DragDropObaid>().enabled = true;
-            AllFruit[i].GetComponent<BackObject>().enabled = true;
+            AllFruit[i].GetComponent<BackObjects>().enabled = true;
             
             yield return new WaitForSeconds(delay);
         }

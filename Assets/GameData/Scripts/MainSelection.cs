@@ -99,7 +99,7 @@ public class MainSelection : MonoBehaviour
         }
         else if (preSelected == 7)
         {
-            Set_YPos = 1065;
+            Set_YPos = 1052;
         }
 
         Scroller.transform.GetComponent<RectTransform>().DOLocalMove(new Vector3(0, Set_YPos, 0), .25f);
