@@ -38,7 +38,7 @@
 
     {
       "xAxis": -0.8,
-      "yAxis": 1.09,
+      "yAxis": 0.962,
       "tilesData": [
         {
           "positionIndex": 0,
@@ -55,7 +55,7 @@
 
     {
       "xAxis": 0.8,
-      "yAxis": 1.09,
+      "yAxis": 0.962,
       "tilesData": [
         {
           "positionIndex": 0,
@@ -67,12 +67,12 @@
           ]
         }
       ],
-      "sortingIndex": 95
+      "sortingIndex": 96
     },
 
     {
       "xAxis": -0.8,
-      "yAxis": -1.11,
+      "yAxis": -0.99,
       "tilesData": [
         {
           "positionIndex": 0,
@@ -89,7 +89,7 @@
 
     {
       "xAxis": 0.8,
-      "yAxis": -1.11,
+      "yAxis": -0.99,
       "tilesData": [
         {
           "positionIndex": 0,
@@ -101,7 +101,7 @@
           ]
         }
       ],
-      "sortingIndex": 80
+      "sortingIndex": 81
     },
 
     {

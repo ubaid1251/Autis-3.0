@@ -1,8 +1,7 @@
 using DG.Tweening;
-using endSort;
 using System;
 using System.Collections;
-using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -18,20 +17,18 @@ namespace KidsItemsSort
 
         public string path = "SortRack";
         public int LevelNumber;
-
-        public InputField input;
         public GameObject saveButton;
-
         public Image darkImage;
-        public Text levelText;
+        public TMP_Text levelText;
+        public static SaveLevel ins;
+        private void Awake()
+        {
+            ins = this;
+        }
         private void Start()
         {
 
             CompletionPanel.instance.OnPressNoThanks += LoadNextLevel;
-#if !UNITY_EDITOR
-            saveButton.SetActive(false);
-#endif
-
             LevelNumber = PlayerPrefs.GetInt("RackSortLevelNumber", 1);
             print(LevelNumber);
             print(blockParent.localScale = Scale_Parent[LevelNumber]);
@@ -40,83 +37,81 @@ namespace KidsItemsSort
             SetLevelText();
             LoadLevel(LevelNumber);
         }
-#if UNITY_EDITOR
         public void OnSaveLevel()
         {
-            LevelData levelData = new LevelData();
-            levelData.LevelNumber = LevelNumber;
+            //LevelData levelData = new LevelData();
+            //levelData.LevelNumber = LevelNumber;
 
-            List<Block> blocks = GameManager.instance.GetBlocks();
-            levelData.blocks = new BlockData[blocks.Count];
+            //List<Block> blocks = GameManager.instance.GetBlocks();
+            //levelData.blocks = new BlockData[blocks.Count];
 
-            for (int i = 0; i < levelData.blocks.Length; i++)
-            {
-                Vector2 pos = blocks[i].transform.localPosition;
+            //for (int i = 0; i < levelData.blocks.Length; i++)
+            //{
+            //    Vector2 pos = blocks[i].transform.localPosition;
 
-                levelData.blocks[i] = new BlockData
-                {
-                    xAxis = pos.x,
-                    yAxis = pos.y,
-                    blockPosition = (int)blocks[i].rackPosition,
-                    sortingIndex = blocks[i].spriteRenderer.sortingOrder
-                };
+            //    levelData.blocks[i] = new BlockData
+            //    {
+            //        xAxis = pos.x,
+            //        yAxis = pos.y,
+            //        blockPosition = (int)blocks[i].rackPosition,
+            //        sortingIndex = blocks[i].spriteRenderer.sortingOrder
+            //    };
 
-                Debug.Log("Rack Position: " + levelData.blocks[i].blockPosition + " orig " + blocks[i].rackPosition);
+            //    Debug.Log("Rack Position: " + levelData.blocks[i].blockPosition + " orig " + blocks[i].rackPosition);
 
-                // tilesData = 1 front layer + backTiles layers
-                levelData.blocks[i].tilesData = new TileData[1 + blocks[i].backTiles.Count];
+            //    // tilesData = 1 front layer + backTiles layers
+            //    levelData.blocks[i].tilesData = new TileData[1 + blocks[i].backTiles.Count];
 
-                // --- FRONT TILES ---
-                levelData.blocks[i].tilesData[0] = new TileData();
-                levelData.blocks[i].tilesData[0].isFront = blocks[i].frontTiles.isFront;
-                levelData.blocks[i].tilesData[0].positionIndex = blocks[i].frontTiles.positionIndex;
+            //    // --- FRONT TILES ---
+            //    levelData.blocks[i].tilesData[0] = new TileData();
+            //    levelData.blocks[i].tilesData[0].isFront = blocks[i].frontTiles.isFront;
+            //    levelData.blocks[i].tilesData[0].positionIndex = blocks[i].frontTiles.positionIndex;
 
-                var frontCount = blocks[i].frontTiles.tiles.Count;
-                levelData.blocks[i].tilesData[0].items = new ItemData[frontCount];
+            //    var frontCount = blocks[i].frontTiles.tiles.Count;
+            //    levelData.blocks[i].tilesData[0].items = new ItemData[frontCount];
 
-                for (int j = 0; j < frontCount; j++)
-                {
-                    var tile = blocks[i].frontTiles.tiles[j];
-                    levelData.blocks[i].tilesData[0].items[j] = new ItemData
-                    {
-                        tileID = tile.id,
-                        ItemID = tile.item != null ? tile.item.id : null
-                    };
-                }
+            //    for (int j = 0; j < frontCount; j++)
+            //    {
+            //        var tile = blocks[i].frontTiles.tiles[j];
+            //        levelData.blocks[i].tilesData[0].items[j] = new ItemData
+            //        {
+            //            tileID = tile.id,
+            //            ItemID = tile.item != null ? tile.item.id : null
+            //        };
+            //    }
 
-                // --- BACK TILES ---
-                for (int a = 0; a < blocks[i].backTiles.Count; a++)
-                {
-                    var backTileLayer = blocks[i].backTiles[a];
-                    var backCount = backTileLayer.tiles.Count;
+            //    // --- BACK TILES ---
+            //    for (int a = 0; a < blocks[i].backTiles.Count; a++)
+            //    {
+            //        var backTileLayer = blocks[i].backTiles[a];
+            //        var backCount = backTileLayer.tiles.Count;
 
-                    levelData.blocks[i].tilesData[a + 1] = new TileData();
-                    levelData.blocks[i].tilesData[a + 1].isFront = blocks[i].backTiles[a].isFront;
-                    levelData.blocks[i].tilesData[a + 1].positionIndex = blocks[i].backTiles[a].positionIndex;
-                    levelData.blocks[i].tilesData[a + 1].items = new ItemData[backCount];
+            //        levelData.blocks[i].tilesData[a + 1] = new TileData();
+            //        levelData.blocks[i].tilesData[a + 1].isFront = blocks[i].backTiles[a].isFront;
+            //        levelData.blocks[i].tilesData[a + 1].positionIndex = blocks[i].backTiles[a].positionIndex;
+            //        levelData.blocks[i].tilesData[a + 1].items = new ItemData[backCount];
 
-                    for (int j = 0; j < backCount; j++)
-                    {
-                        var tile = backTileLayer.tiles[j];
-                        levelData.blocks[i].tilesData[a + 1].items[j] = new ItemData
-                        {
-                            tileID = tile.id,
-                            ItemID = tile.item != null ? tile.item.id : null
-                        };
-                    }
-                }
-            }
+            //        for (int j = 0; j < backCount; j++)
+            //        {
+            //            var tile = backTileLayer.tiles[j];
+            //            levelData.blocks[i].tilesData[a + 1].items[j] = new ItemData
+            //            {
+            //                tileID = tile.id,
+            //                ItemID = tile.item != null ? tile.item.id : null
+            //            };
+            //        }
+            //    }
+            //}
 
-            string levelJson = JsonUtilityManager.ToJson(levelData);
-            Debug.Log(levelJson);
+            //string levelJson = JsonUtilityManager.ToJson(levelData);
+            //Debug.Log(levelJson);
 
-            JsonFileWriter.SaveToResources((path + "/" + LevelNumber), levelJson);
+            //JsonFileWriter.SaveToResources((path + "/" + LevelNumber), levelJson);
         }
-#endif
 
         public void LoadLevel(int LevelNumber)
         {
-            
+
             string json = JsonFileWriter.LoadFromResources(path + "/" + LevelNumber);
             blockParent = GameManager.instance.transform;
             if (string.IsNullOrEmpty(json))
@@ -136,16 +131,21 @@ namespace KidsItemsSort
 
         public void ReloadLevel()
         {
-
+            SoundManager.instance.StopEffect(26);
+            SoundManager.instance.PlayEffect_Instance(7);
+           // IntitializeAdmob.Instance.ShowInterstitialAd();
+            GameManager.instance.LoadingPanel.SetActive(true);
+            GameManager.instance.ClearOldBlocks();
             LoadLevel(LevelNumber);
-
         }
         public void OnLoadLevel()
         {
             try
             {
-                LevelNumber = int.Parse(input.text);
-            } catch (Exception e) {
+                //LevelNumber = int.Parse(input.text);
+            }
+            catch (Exception e)
+            {
                 LevelNumber = 1;
             }
 
@@ -164,22 +164,22 @@ namespace KidsItemsSort
         IEnumerator LoadRoutine(string json)
         {
             darkImage.gameObject.SetActive(true);
-            
-            darkImage.DOFade(0, 0);
-            darkImage.DOFade(1, .5f);
-            yield return new WaitForSeconds(.5f);
+
+            //darkImage.DOFade(0, 0);
+            //darkImage.DOFade(1, .5f);
+            //yield return new WaitForSeconds(.2f);
             GameManager.instance.Reset_Slider_Hint();
             SetLevelText();
             LevelData levelData = JsonUtilityManager.FromJson<LevelData>(json);
 
             // Clear old blocks
-            foreach (var oldBlock in GameManager.instance.blocks)
-            {
-                if (oldBlock != null)
-                    Destroy(oldBlock.gameObject);
-            }
-            GameManager.instance.blocks.Clear();
-            yield return new WaitForSeconds(.5f);
+            //foreach (var oldBlock in GameManager.instance.blocks)
+            //{
+            //    if (oldBlock != null)
+            //        Destroy(oldBlock.gameObject);
+            //}
+            //GameManager.instance.blocks.Clear();
+            //yield return new WaitForSeconds(.1f);
             blockParent.localScale = Scale_Parent[LevelNumber];
             //blockParent.position = Position_Parent[LevelNumber];
             // Load new blocks
@@ -266,24 +266,23 @@ namespace KidsItemsSort
             //GameManager.instance.progressSlider.maxValue = GameManager.totalItems;
             //GameManager.instance.progressText.text = 0 + " / " + GameManager.totalItems + " ( 0%)";
             GameManager.instance.progressText.text = 0 + " / " + GameManager.totalItems;
-            darkImage.DOFade(0, .5f).OnComplete(() => 
+            darkImage.DOFade(0, .1f).OnComplete(() =>
             {
+                GameManager.instance.CoinPlus.interactable = true;
                 darkImage.gameObject.SetActive(false);
+                darkImage.DOFade(1, .01f);
             });
             Debug.Log("Loaded level: " + LevelNumber);
         }
 
-        public void SetLevelText() {
+        public void SetLevelText()
+        {
             levelText.text = "LEVEL " + LevelNumber;
         }
 
         public void LoadNextLevel()
         {
-
-
             LoadLevel(LevelNumber + 1);
-
-
         }
 
         private void OnDisable()
@@ -294,33 +293,33 @@ namespace KidsItemsSort
 
     }
     [Serializable]
-        public class LevelData
-        {
-            public int LevelNumber;
-            public BlockData[] blocks;
-        }
-        [Serializable]
-        public class BlockData
-        {
-            public float xAxis = 0, yAxis = 0;
-            public TileData[] tilesData;
-            public int blockPosition, sortingIndex;
-
-        }
-        [Serializable]
-        public class TileData
-        {
-            public int positionIndex;
-            public bool isFront;
-            public ItemData[] items;
-        }
-
-        [Serializable]
-        public class ItemData
-        {
-
-            public int tileID;
-            public string ItemID;
-
-        }
+    public class LevelData
+    {
+        public int LevelNumber;
+        public BlockData[] blocks;
     }
+    [Serializable]
+    public class BlockData
+    {
+        public float xAxis = 0, yAxis = 0;
+        public TileData[] tilesData;
+        public int blockPosition, sortingIndex;
+
+    }
+    [Serializable]
+    public class TileData
+    {
+        public int positionIndex;
+        public bool isFront;
+        public ItemData[] items;
+    }
+
+    [Serializable]
+    public class ItemData
+    {
+
+        public int tileID;
+        public string ItemID;
+
+    }
+}

@@ -4,7 +4,7 @@
 
     {
       "xAxis": 0.06,
-      "yAxis": 1.7,
+      "yAxis": 1.83,
       "tilesData": [
         {
           "positionIndex": 0,
@@ -54,7 +54,7 @@
 
     {
       "xAxis": -1.79,
-      "yAxis": -0.51,
+      "yAxis": -0.629,
       "tilesData": [
         {
           "positionIndex": 0,
@@ -70,7 +70,7 @@
     },
     {
       "xAxis": 0.117,
-      "yAxis": -0.51,
+      "yAxis": -0.629,
       "tilesData": [
         {
           "positionIndex": 0,
@@ -86,7 +86,7 @@
     },
     {
       "xAxis": 2.05,
-      "yAxis": -0.51,
+      "yAxis": -0.629,
       "tilesData": [
         {
           "positionIndex": 0,
@@ -103,7 +103,7 @@
 
     {
       "xAxis": -2.27,
-      "yAxis": -1.62,
+      "yAxis": -1.858,
       "tilesData": [
         {
           "positionIndex": 0,
@@ -119,7 +119,7 @@
     },
     {
       "xAxis": 2.31,
-      "yAxis": -1.62,
+      "yAxis": -1.858,
       "tilesData": [
         {
           "positionIndex": 0,

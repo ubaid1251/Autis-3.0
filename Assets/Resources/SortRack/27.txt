@@ -3,16 +3,16 @@
   "blocks": [
 
     {
-      "xAxis": -1.54,
+      "xAxis": -1.521,
       "yAxis": 0.93,
       "tilesData":[{"positionIndex":0,"isFront":true,"items":[{"tileID":1,"ItemID":"33"},{"tileID":2,"ItemID":"10"},{"tileID":3,"ItemID":""}]}],
       "sortingIndex":110
     },
     {
-      "xAxis": 1.66,
+      "xAxis": 1.641,
       "yAxis": 0.93,
       "tilesData":[{"positionIndex":0,"isFront":true,"items":[{"tileID":1,"ItemID":"58"},{"tileID":2,"ItemID":""},{"tileID":3,"ItemID":"33"}]}],
-      "sortingIndex":110
+      "sortingIndex":99
     },
 
     {
@@ -26,7 +26,7 @@
       "xAxis": -1.54,
       "yAxis": -1.312,
       "tilesData":[{"positionIndex":0,"isFront":true,"items":[{"tileID":1,"ItemID":"33"},{"tileID":2,"ItemID":"30"},{"tileID":3,"ItemID":""}]}],
-      "sortingIndex":90
+      "sortingIndex":101
     },
     {
       "xAxis": 1.66,

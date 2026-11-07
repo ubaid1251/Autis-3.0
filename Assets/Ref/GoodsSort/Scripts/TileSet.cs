@@ -108,7 +108,7 @@ namespace KidsItemsSort
 
             if (CheckItemMatch())
             {
-                GameManager.instance.matchAudio.Play();
+                SoundManager.instance.PlayEffect_Instance(25);
                 Debug.Log("MATCH...");
                 GameManager.instance.UpdateProgress();
                 RemoveEmpty();

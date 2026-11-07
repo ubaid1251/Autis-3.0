@@ -4,10 +4,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Events;
-using KidsItemsSort;
 using DG.Tweening;
 using Coffee.UIExtensions;
-namespace endSort
+namespace KidsItemsSort
 {
     public class CompletionPanel : MonoBehaviour
     {
@@ -16,7 +15,7 @@ namespace endSort
         public Button[] Btns;
         public GameObject[] bjas;
         public event Action OnPressNoThanks;
-        public GameObject text,Stars,Coin50Btn,Particle;
+        public GameObject text, Stars, Coin50Btn, Particle;
         CanvasGroup cg;
         private void Awake()
         {
@@ -24,17 +23,17 @@ namespace endSort
             instance = this;
         }
         public void OnNoThanks()
-        {        
-            panel.transform.DOScale(.5f, .25f);
+        {
+            //panel.transform.DOScale(.5f, .25f);
             cg.DOFade(0, .25f).OnComplete(() =>
-            {               
+            {
                 OnPressNoThanks?.Invoke();
                 OnResetPanel();
-            });           
+            });
         }
         public void OnReload()
         {
-            panel.transform.DOScale(.5f, .25f);
+            //panel.transform.DOScale(.5f, .25f);
             cg.DOFade(0, .25f).OnComplete(() =>
             {
                 OnResetPanel();
@@ -42,11 +41,17 @@ namespace endSort
         }
         public void OnResetPanel()
         {
+            SoundManager.instance.StopEffect(26);
             SoundManager.instance.PlayEffect_Instance(7);
+            GameManager.instance.Show_Ad();
+            GameManager.instance.LoadingPanel.SetActive(true);
+            GameManager.instance.CoinPlus.interactable = true;
+            //GameManager.instance.Ui_On();
             panel.transform.parent.gameObject.SetActive(false);
             bjas[0].gameObject.SetActive(false);
             bjas[1].gameObject.SetActive(false);
-            text.transform.DOLocalMoveY(500, 0.1f);
+            text.transform.DOLocalMoveY(500, 0.01f);
+            text.gameObject.SetActive(false);
             Stars.transform.GetChild(0).transform.DOScale(0f, 0.1f);
             Stars.transform.GetChild(1).transform.DOScale(0f, 0.1f);
             Stars.transform.GetChild(2).transform.DOScale(0f, 0.1f);
@@ -57,36 +62,42 @@ namespace endSort
         }
         public IEnumerator OpenCompletionScreen()
         {
+            //yield return new WaitForSeconds(.2f);
+            //panel.transform.parent.gameObject.SetActive(true);
             yield return new WaitForSeconds(.2f);
             panel.transform.parent.gameObject.SetActive(true);
-            yield return new WaitForSeconds(.2f);
+            GameManager.instance.CoinPlus.interactable = false;
+           // IntitializeAdmob.Instance.HideBanner();
             SoundManager.instance.PlayEffect_Instance(1);
-            panel.transform.DOScale(1, .6f);
-            cg.DOFade(1, .7f)
+            //panel.transform.DOScale(1, .6f);
+            cg.DOFade(1, .3f)
             .OnComplete(() =>
-             {
-                 SoundManager.instance.PlayEffect_Instance(23);
+            {
+                SoundManager.instance.PlayEffect_Instance(23);
+                GameManager.instance.ClearOldBlocks();
+                SaveLevel.ins.darkImage.gameObject.SetActive(true);
+                bjas[0].gameObject.SetActive(true);
+                bjas[1].gameObject.SetActive(true);
+                text.gameObject.SetActive(true);
+                text.transform.DOLocalMoveY(20, 0.7f).SetDelay(1.6f)
+                .OnComplete(() =>
+                {
+                    SoundManager.instance.PlayEffect_Instance(17);
 
-                 bjas[0].gameObject.SetActive(true);
-                 bjas[1].gameObject.SetActive(true);
+                    Particle.SetActive(true);
+                    SoundManager.instance.PlayEffect_Loop(26);
 
-                 text.transform.DOLocalMoveY(20, 0.7f).SetDelay(1.6f)
-                 .OnComplete(() =>
-                 {
-                     SoundManager.instance.PlayEffect_Instance(17);
-
-                     Particle.SetActive(true);
-                     OnStars();
-                     SoundManager.instance.PlayEffect_Instance(21);
-                     Coin50Btn.transform.DOScale(0.78f, 0.7f).SetEase(Ease.OutBack).SetDelay(1f)
-                     .OnComplete(() =>
-                     {
-                         //bjas[0].GetComponent<Animator>().Play("idl");
-                         //bjas[1].GetComponent<Animator>().Play("idl");
-                         Coin50Btn.GetComponent<UIShiny>().enabled = true;
-                     });
-                 });
-             });
+                    OnStars();
+                    SoundManager.instance.PlayEffect_Instance(27);
+                    Coin50Btn.transform.DOScale(0.78f, 0.7f).SetEase(Ease.OutBack).SetDelay(1f)
+                    .OnComplete(() =>
+                    {
+                        //bjas[0].GetComponent<Animator>().Play("idl");
+                        //bjas[1].GetComponent<Animator>().Play("idl");
+                        Coin50Btn.GetComponent<UIShiny>().enabled = true;
+                    });
+                });
+            });
         }
         public void CoinBtn(int num)
         {
@@ -115,15 +126,15 @@ namespace endSort
             Stars.SetActive(true);
             Stars.transform.GetChild(0).transform.DOScale(0.71f, 0.7f).SetEase(Ease.OutBack).SetDelay(0.1f).OnPlay(() =>
             {
-                SoundManager.instance.PlayEffect_Instance(21);
+                SoundManager.instance.PlayEffect_Instance(27);
             });
             Stars.transform.GetChild(1).transform.DOScale(0.71f, 0.7f).SetEase(Ease.OutBack).SetDelay(0.4f).OnPlay(() =>
             {
-                SoundManager.instance.PlayEffect_Instance(21);
+                SoundManager.instance.PlayEffect_Instance(27);
             });
             Stars.transform.GetChild(2).transform.DOScale(0.71f, 0.7f).SetEase(Ease.OutBack).SetDelay(0.6f).OnPlay(() =>
             {
-                SoundManager.instance.PlayEffect_Instance(21);
+                SoundManager.instance.PlayEffect_Instance(27);
             });
         }
     }

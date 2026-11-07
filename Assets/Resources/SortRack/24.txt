@@ -38,13 +38,13 @@
       "xAxis": 0.02,
       "yAxis": -1.212,
       "tilesData":[{"positionIndex":0,"isFront":true,"items":[{"tileID":1,"ItemID":"11"},{"tileID":2,"ItemID":""},{"tileID":3,"ItemID":"27"}]}],
-      "sortingIndex":90
+      "sortingIndex":91
     },
     {
       "xAxis": 1.62,
       "yAxis": -1.212,
       "tilesData":[{"positionIndex":0,"isFront":true,"items":[{"tileID":1,"ItemID":"11"},{"tileID":2,"ItemID":"24"},{"tileID":3,"ItemID":"55"}]}],
-      "sortingIndex":90
+      "sortingIndex":92
     }
 
   ]

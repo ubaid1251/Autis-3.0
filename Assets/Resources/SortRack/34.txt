@@ -35,7 +35,7 @@
         }
       ],
       "blockPosition": 0,
-      "sortingIndex": 100
+      "sortingIndex": 78
     },
     {
       "xAxis": 0.0,
@@ -52,7 +52,7 @@
         }
       ],
       "blockPosition": 0,
-      "sortingIndex": 85
+      "sortingIndex": 79
     },
 
     {
@@ -88,7 +88,7 @@
         }
       ],
       "blockPosition": 0,
-      "sortingIndex": 80
+      "sortingIndex": 74
     },
 
     {
@@ -124,7 +124,7 @@
         }
       ],
       "blockPosition": 0,
-      "sortingIndex": 70
+      "sortingIndex": 76
     },
 
     {

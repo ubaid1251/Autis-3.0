@@ -210,7 +210,7 @@
         }
       ],
       "blockPosition": 0,
-      "sortingIndex": 85
+      "sortingIndex": 74
     },
 
     {
@@ -264,7 +264,7 @@
         }
       ],
       "blockPosition": 0,
-      "sortingIndex": 80
+      "sortingIndex": 82
     },
 
     {
@@ -291,7 +291,7 @@
         }
       ],
       "blockPosition": 0,
-      "sortingIndex": 80
+      "sortingIndex": 81
     },
 
     {
@@ -372,7 +372,7 @@
         }
       ],
       "blockPosition": 0,
-      "sortingIndex": 75
+      "sortingIndex": 76
     },
 
     {
@@ -399,7 +399,7 @@
         }
       ],
       "blockPosition": 0,
-      "sortingIndex": 75
+      "sortingIndex": 77
     },
 
     {

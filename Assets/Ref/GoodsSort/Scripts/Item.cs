@@ -45,7 +45,7 @@ namespace KidsItemsSort
             ScaleUp();
             visuals.sortingOrder = GameManager.InHandSortingIndex;
             transform.DOMove(new Vector2(pos.x, pos.y + .2f), .1f);
-            GameManager.instance.tapAudio.Play();
+            SoundManager.instance.PlayEffect_Instance(27);
         }
         public void MouseUp() {
             if (!parentTile.parentTileSet.isFront)
@@ -97,7 +97,7 @@ namespace KidsItemsSort
             Vector2 pos = transform.localPosition;
 
             transform.DOLocalMoveY((pos.y - .5f), .1f).OnComplete(() => {
-                GameManager.instance.dropAudio.Play();
+                SoundManager.instance.PlayEffect_Instance(28);
 
                 transform.DOLocalMoveY((pos.y), .1f);
             });

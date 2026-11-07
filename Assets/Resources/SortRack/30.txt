@@ -89,7 +89,7 @@
         }
       ],
       "blockPosition": 0,
-      "sortingIndex": 95
+      "sortingIndex": 97
     },
 
     {
@@ -116,7 +116,7 @@
         }
       ],
       "blockPosition": 0,
-      "sortingIndex": 95
+      "sortingIndex": 96
     },
 
     {
@@ -175,7 +175,7 @@
 
     {
       "xAxis": 1.5750000476837159,
-      "yAxis": -1.051,
+      "yAxis": -1.138,
       "tilesData": [
         {
           "positionIndex": 0,
@@ -197,12 +197,12 @@
         }
       ],
       "blockPosition": 0,
-      "sortingIndex": 90
+      "sortingIndex": 91
     },
 
     {
       "xAxis": 0.0,
-      "yAxis": -1.051,
+      "yAxis": -1.138,
       "tilesData": [
         {
           "positionIndex": 1,
@@ -220,7 +220,7 @@
 
     {
       "xAxis": -1.5750000476837159,
-      "yAxis": -1.051,
+      "yAxis": -1.138,
       "tilesData": [
         {
           "positionIndex": 0,
@@ -242,12 +242,12 @@
         }
       ],
       "blockPosition": 0,
-      "sortingIndex": 90
+      "sortingIndex": 89
     },
 
     {
       "xAxis": 1.5750000476837159,
-      "yAxis": -2.176,
+      "yAxis": -2.263,
       "tilesData": [
         {
           "positionIndex": 0,
@@ -269,12 +269,12 @@
         }
       ],
       "blockPosition": 0,
-      "sortingIndex": 85
+      "sortingIndex": 87
     },
 
     {
       "xAxis": 0.0,
-      "yAxis": -2.176,
+      "yAxis": -2.263,
       "tilesData": [
         {
           "positionIndex": 0,
@@ -296,12 +296,12 @@
         }
       ],
       "blockPosition": 0,
-      "sortingIndex": 85
+      "sortingIndex": 86
     },
 
     {
       "xAxis": -1.5750000476837159,
-      "yAxis": -2.176,
+      "yAxis": -2.263,
       "tilesData": [
         {
           "positionIndex": 0,

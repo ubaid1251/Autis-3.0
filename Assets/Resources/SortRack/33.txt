@@ -51,7 +51,7 @@
         }
       ],
       "blockPosition": 0,
-      "sortingIndex": 100
+      "sortingIndex": 101
     },
     {
       "xAxis": 1.575,
@@ -68,7 +68,7 @@
         }
       ],
       "blockPosition": 0,
-      "sortingIndex": 100
+      "sortingIndex": 102
     },
     {
       "xAxis": -1.575,
@@ -120,7 +120,7 @@
         }
       ],
       "blockPosition": 0,
-      "sortingIndex": 95
+      "sortingIndex": 96
     },
     {
       "xAxis": 1.575,
@@ -146,7 +146,7 @@
         }
       ],
       "blockPosition": 0,
-      "sortingIndex": 95
+      "sortingIndex": 97
     },
     {
       "xAxis": -1.575,
@@ -189,7 +189,7 @@
         }
       ],
       "blockPosition": 0,
-      "sortingIndex": 90
+      "sortingIndex": 91
     },
     {
       "xAxis": 1.575,
@@ -206,7 +206,7 @@
         }
       ],
       "blockPosition": 0,
-      "sortingIndex": 90
+      "sortingIndex": 92
     },
     {
       "xAxis": 1.575,
@@ -232,7 +232,7 @@
         }
       ],
       "blockPosition": 0,
-      "sortingIndex": 85
+      "sortingIndex": 87
     },
     {
       "xAxis": 0.0,
@@ -258,7 +258,7 @@
         }
       ],
       "blockPosition": 0,
-      "sortingIndex": 85
+      "sortingIndex": 86
     },
     {
       "xAxis": -1.575,

@@ -25,7 +25,7 @@
       "xAxis": 1.6,
       "yAxis": 1.02,
       "tilesData":[{"positionIndex":0,"isFront":true,"items":[{"tileID":1,"ItemID":"28"},{"tileID":2,"ItemID":"31"},{"tileID":3,"ItemID":"59"}]}],
-      "sortingIndex":100
+      "sortingIndex":89
     },
 
     {

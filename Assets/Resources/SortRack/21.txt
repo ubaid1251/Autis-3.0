@@ -68,15 +68,15 @@
 
     {
       "xAxis": -1.6,
-      "yAxis": -2.2,
+      "yAxis": -2.259,
       "tilesData":[{"positionIndex":0,"isFront":true,"items":[{"tileID":1,"ItemID":"24"},{"tileID":2,"ItemID":"28"},{"tileID":3,"ItemID":"21"}]}],
       "sortingIndex":70
     },
     {
       "xAxis": 1.6,
-      "yAxis": -2.2,
+      "yAxis": -2.259,
       "tilesData":[{"positionIndex":0,"isFront":true,"items":[{"tileID":1,"ItemID":"23"},{"tileID":2,"ItemID":"24"},{"tileID":3,"ItemID":"30"}]}],
-      "sortingIndex":70
+      "sortingIndex":81
     }
 
   ]

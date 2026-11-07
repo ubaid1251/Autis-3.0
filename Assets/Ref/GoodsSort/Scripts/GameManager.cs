@@ -1,22 +1,21 @@
-using endSort;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using UnityEngine;
-using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 using TMPro;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 namespace KidsItemsSort
 {
     public class GameManager : MonoBehaviour
     {
         public static bool GameTouch = true;
-        public static int InHandSortingIndex = 3000,frontSortingIndex = 980;
+        public static int InHandSortingIndex = 3000, frontSortingIndex = 980;
         Item currentItem;
         public static GameManager instance;
         public List<Block> blocks;
-        public AudioSource dropAudio, tapAudio, matchAudio;
+        //public AudioSource dropAudio, tapAudio, matchAudio;
         public LevelGenerator generator;
         public int maxHints = 3;
         private int usedHints = 0;
@@ -27,12 +26,17 @@ namespace KidsItemsSort
         public static int totalItems;
         int completedItems;
         int coin = 0;
-        public GameObject outOfHintPopup, CoinAddPopUp;
-        public bool IsUi=false;
+        public GameObject outOfHintPopup, CoinAddPopUp, LoadingPanel;
+        public Button CoinPlus;
+        public bool IsUi = false, IsHomePress = false;
+        public GameObject All_Ui, Coinbar;
+        public Camera MyCam;
         private void Awake()
         {
             instance = this;
             IsUi = false;
+            IsHomePress = false;
+
         }
         public List<Item> allItems;
         public void UpdateProgress()
@@ -113,7 +117,7 @@ namespace KidsItemsSort
                 item.ShowHintFade();
             }
 
-            currentHintIndex++;  
+            currentHintIndex++;
         }
         public void UpdateHint_Text()
         {
@@ -126,6 +130,7 @@ namespace KidsItemsSort
             if (!spent)
             {
                 Debug.Log("Not Enough Coins");
+                CoinPlus.interactable = false;
                 outOfHintPopup.GetComponent<ShowAndClosePanel>().Cross();
                 StartCoroutine(ShowCoinPopupDelay());
                 return;
@@ -160,6 +165,16 @@ namespace KidsItemsSort
         }
         private void Start()
         {
+
+          //  IntitializeAdmob.Instance.HideBigBanner();
+            Show_Ad();
+            if (PlayerPrefs.GetInt("RemoveAds") == 1)
+            {
+                MyCam.transform.position = new Vector3(0, 0.63f, -10);
+                MyCam.orthographicSize = 5.95f;
+                All_Ui.GetComponent<RectTransform>().anchoredPosition = new Vector3(0, 0, 0);
+                Coinbar.GetComponent<RectTransform>().anchoredPosition = new Vector3(0, 0, 0);
+            }
             Application.targetFrameRate = 120;
 
             foreach (Transform t in transform)
@@ -174,7 +189,7 @@ namespace KidsItemsSort
             //progressFillImage.fillAmount = 0;
         }
 
-        public List<Block> GetBlocks() 
+        public List<Block> GetBlocks()
         {
             blocks = new List<Block>();
             foreach (Transform t in transform)
@@ -199,7 +214,7 @@ namespace KidsItemsSort
             }
             StartCoroutine(CompletionPanel.instance.OpenCompletionScreen());
             //CompletionPanel.instance.OpenCompletionScreen();
-            Debug.Log("Level Complete");         
+            Debug.Log("Level Complete");
         }
         public void Reset_Slider_Hint()
         {
@@ -213,8 +228,8 @@ namespace KidsItemsSort
         private void Update()
         {
             if (IsUi)
-               return;
-            
+                return;
+
             if (Input.GetMouseButtonDown(0))
             {
                 DetectObject();
@@ -277,9 +292,21 @@ namespace KidsItemsSort
         }
         public void Home()
         {
+            SoundManager.instance.StopEffect(26);
             SoundManager.instance.PlayEffect_Instance(7);
-
-            SceneManager.LoadScene("Main");
+            IsHomePress = true;
+            Show_Ad();
+            LoadingPanel.SetActive(true);
+            GameManager.instance.Ui_On();
+            PlayerPrefs.SetInt("Completed", 1);
+            PlayerPrefs.SetInt("RateCounter", PlayerPrefs.GetInt("RateCounter") + 1);
+            print("Now rateus = " + PlayerPrefs.GetInt("RateCounter"));
+            print("Now Completed = " + PlayerPrefs.GetInt("Completed"));
+            Invoke("WaitMain", 2f);
+        }
+        public void WaitMain()
+        {
+            SceneManager.LoadScene("Selection");
         }
         public void Ui_On()
         {
@@ -289,9 +316,32 @@ namespace KidsItemsSort
         {
             IsUi = false;
         }
-        public void testtt()
+        public void Show_Ad()
         {
-            //CompletionPanel.instance.OpenCompletionScreen();
+            //IntitializeAdmob.Instance.ShowInterstitialAd();
+        }
+        public void RewardAd_Hint()
+        {
+            //IntitializeAdmob.Instance.ShowRewarded(() =>
+            //{
+            //    usedHints--;
+            //    UpdateHint_Text();
+            //    Debug.Log("Reward Given!");
+            //});
+        }
+        //public void GetReward_Ad()
+        //{
+        //    IntitializeAdmob.Instance.ShowRewarded(); 
+
+        //}
+        public void ClearOldBlocks()
+        {
+            foreach (var oldBlock in GameManager.instance.blocks)
+            {
+                if (oldBlock != null)
+                    Destroy(oldBlock.gameObject);
+            }
+            GameManager.instance.blocks.Clear();
         }
     }
 }
